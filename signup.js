@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sessionStorage.getItem('signup_verified') === 'true') {
         verifyMessage.innerHTML = '<span style="color:green; font-weight:bold;">이메일 인증이 완료되었습니다.</span>';
         // 인증 완료 후 플래그 제거(필요시)
-        sessionStorage.removeItem('signup_verified');
+        //sessionStorage.removeItem('signup_verified');
+
+        // 인증번호 받기 버튼 숨기기
+        const verificationLink = document.getElementById('VerificationLink');
+        if (verificationLink) {
+            verificationLink.style.display = 'none';
+        }
     }
 });
